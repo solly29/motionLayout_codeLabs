@@ -63,6 +63,11 @@
                 android:rotation="-720"/>
             <!-- TODO: Add KeyAttribute to delay the appearance of @id/credits -->
 
+            <KeyAttribute
+                motion:framePosition="85"
+                motion:motionTarget="@id/credits"
+                android:alpha="0.0"/>
+
         </KeyFrameSet>
     </Transition>
 
@@ -70,7 +75,6 @@
     <ConstraintSet android:id="@+id/start">
         <Constraint
             android:id="@id/moon"
-            
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintStart_toStartOf="parent"
