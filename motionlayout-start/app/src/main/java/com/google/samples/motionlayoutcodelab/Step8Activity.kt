@@ -34,6 +34,12 @@ class Step8Activity : AppCompatActivity() {
 
     private fun coordinateMotion() {
         // TODO: set progress of MotionLayout based on an AppBarLayout.OnOffsetChangedListener
+        val appBarLayout = findViewById<AppBarLayout>(R.id.appbar_layout)
+        val motionLayout = findViewById<MotionLayout>(R.id.motion_layout)
 
+        appBarLayout.addOnOffsetChangedListener( AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
+            val seekPosition = -verticalOffset / appBarLayout.totalScrollRange.toFloat()
+            motionLayout.progress = seekPosition
+        })
     }
 }
